@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!--4 checkboxes: lowercase, uppercase, numbers and special characters.
+    If checked, the password will contain the corresponding type of character-->
+    <CheckBox
+        android:id="@+id/lowercase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lowercase"
+        android:onClick="disable_readable"
+        android:textColor="@color/Navy"
+        android:buttonTint="@color/Navy"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <CheckBox
+        android:id="@+id/uppercase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/uppercase"
+        android:onClick="disable_readable"
+        android:textColor="@color/Navy"
+        android:buttonTint="@color/Navy"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@+id/lowercase"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2" />
+
+    <CheckBox
+        android:id="@+id/numbers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/numbers"
+        android:textColor="@color/Navy"
+        android:buttonTint="@color/Navy"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@+id/lowercase"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <CheckBox
+        android:id="@+id/special_characters"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/special_characters"
+        android:textColor="@color/Navy"
+        android:buttonTint="@color/Navy"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@+id/lowercase"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.4" />
+
+    <!-- Textview to show the length of the password-->
+    <TextView
+        android:id="@+id/length"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/default_value"
+        android:textColor="@color/Navy"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <!-- 2 buttons to increment and decrement the length of the password-->
+    <Button
+        android:id="@+id/sub"
+        android:layout_width="wrap_content"
+        android:minWidth="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="0dp"
+        android:text="@string/sub"
+        android:textColor="@color/Navy"
+        android:background="@drawable/length_button"
+        android:onClick="sub"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <Button
+        android:id="@+id/add"
+        android:layout_width="wrap_content"
+        android:minWidth="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="0dp"
+        android:text="@string/add"
+        android:textColor="@color/Navy"
+        android:background="@drawable/length_button"
+        android:onClick="add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.7"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <!-- Button to generate a password-->
+    <Button
+        android:id="@+id/generate_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button"
+        android:onClick="generate_password"
+        android:text="@string/generate"
+        android:textColor="@color/Navy"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.7" />
+
+    <!-- Textview to show the generated password-->
+    <TextView
+        android:id="@+id/password"
+        android:background="@drawable/textarea"
+        android:layout_width="180dp"
+        android:textAlignment="center"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:textColor="@color/Navy"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.85" />
+
+    <ImageButton
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:onClick="copy"
+        android:background="@color/Grey"
+        android:src="@drawable/copy"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="@id/password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toEndOf="@id/password"
+        app:layout_constraintTop_toTopOf="@id/password" />
+
+    <!-- Switch button to specify if the password needs to be readable-->
+    <Switch
+        android:id="@+id/readable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/readable"
+        android:onClick="enable_letters"
+        android:switchPadding="6dp"
+        android:textColor="@color/Navy"
+        android:thumbTint="@color/switch_color"
+        android:trackTint="@color/Navy"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.6"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

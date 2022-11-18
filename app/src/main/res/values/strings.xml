@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Password Generator</string>
+    <string name="lowercase">Lettere minuscole</string>
+    <string name="uppercase">Lettere maiuscole</string>
+    <string name="numbers">Numeri</string>
+    <string name="special_characters">Caratteri speciali</string>
+    <string name="generate">Genera password</string>
+    <string name="add">+</string>
+    <string name="sub">-</string>
+    <string name="default_value">8</string>
+    <string name="readable">Leggibile</string>
+    <string name="copy_message">Password copiata negli appunti</string>
+    <string name="error">Errore</string>
+</resources>
