@@ -1,5 +1,5 @@
 # Password-generator
-This application con generate different types of passwords.
+This application can generate different types of passwords.
 
 Java class --> app/src/main/java/com/example/passwordgenerator/MainActivity.java
 
